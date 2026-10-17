@@ -12,6 +12,10 @@
       --white: #ffffff;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
 
     * {
       margin: 0;
@@ -736,32 +740,488 @@
       border-bottom: 1px solid rgba(0, 0, 0, 0.16);
     }
 
-    .solutions-grid {
+    /* ===== Our Solutions and Notable Projects ===== */
+    .solutions-page {
+      display: flex;
+      flex-direction: column;
+      min-height: calc(100vh - 52px);
+      padding: 52px 0 3rem;
+      background: #f8f8f5;
+    }
+
+    .solutions-banner {
+      flex: 0 0 auto;
+      width: 100%;
+      padding: 1rem 1.5rem;
+      background: #0b5934;
+    }
+
+    .solutions-banner h2 {
+      max-width: 1200px;
+      margin: 0 auto;
+      color: #fff;
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-weight: 700;
+    }
+
+    .solutions-flow {
+      width: calc(100% - 48px);
+      max-width: 1200px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .solutions-flow {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      max-width: 1100px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 24px;
+      margin-top: 24px;
     }
 
-    .solution-card {
+    .solution-panel {
+      border-radius: 8px;
       background: #fff;
-      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      scroll-margin-top: 72px;
+    }
+
+    .solution-panel-intro {
       padding: 1.5rem;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      border-radius: 8px 8px 0 0;
+      background: #0b5934;
+      color: #fff;
     }
 
-    .solution-card h3 {
-      color: var(--dark-green);
-      margin-bottom: 0.8rem;
-      font-size: 1.2rem;
+    .solution-panel-intro span {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
-    .solution-card p {
-      font-size: 0.9rem;
-      color: #444;
+    .solution-panel-intro h3 {
+      margin: 0.25rem 0 0.5rem;
+      color: #fff;
+      font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+    }
+
+    .solution-panel-intro p {
+      max-width: 75ch;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.9);
       line-height: 1.6;
+    }
+
+    .solution-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      padding: 24px;
+    }
+
+    .solution-detail {
+      min-width: 0;
+      padding: 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      background: #f8fafc;
+    }
+
+    .solution-detail h4 {
+      margin: 0 0 0.7rem;
+      color: #0b5934;
+      font-size: 1rem;
+    }
+
+    .solution-detail ul {
+      margin: 0;
+      padding-left: 1.2rem;
+      color: #475569;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    .solution-detail li + li {
+      margin-top: 0.45rem;
+    }
+
+    .solution-detail table {
+      width: 100%;
+      border-collapse: collapse;
+      color: #475569;
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+
+    .solution-detail th,
+    .solution-detail td {
+      padding: 0.6rem;
+      border: 1px solid #cbd5e1;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .solution-detail th {
+      background: #e2e8f0;
+      color: #0b5934;
+      font-weight: 700;
+    }
+
+    .itc3-controller {
+      margin: 0 24px 24px;
+      padding: 24px;
+      border: 1px solid #f1d6a3;
+      border-radius: 8px;
+      background: #fffbeb;
+      color: #475569;
+      scroll-margin-top: 72px;
+    }
+
+    .itc3-controller-heading span {
+      color: #8a5a00;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .itc3-controller-heading h4 {
+      margin: 0.35rem 0 0.6rem;
+      color: #0b5934;
+      font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+      line-height: 1.25;
+    }
+
+    .itc3-controller-heading h3 {
+      margin: 0.35rem 0 0.6rem;
+      color: #0b5934;
+      font-size: clamp(1.45rem, 2.7vw, 2rem);
+      line-height: 1.2;
+    }
+
+    .itc3-controller-heading p,
+    .itc3-controller-summary p {
+      margin: 0;
+      line-height: 1.65;
+    }
+
+    .itc3-controller-main {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      align-items: stretch;
+      margin-top: 24px;
+    }
+
+    .itc3-controller-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .itc3-controller-gallery figure {
+      min-height: 150px;
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid #e7d9bd;
+      border-radius: 6px;
+      background: #f1f5f9;
+    }
+
+    .itc3-controller-gallery figure:last-child {
+      grid-column: 1 / -1;
+    }
+
+    .itc3-controller-gallery img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 150px;
+      object-fit: contain;
+    }
+
+    .itc3-controller-summary {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      padding: 24px;
+      border-left: 4px solid #0b5934;
+      border-radius: 6px;
+      background: #fff;
+    }
+
+    .itc3-controller-features {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid #ead9b8;
+    }
+
+    .itc3-controller-features h5 {
+      margin: 0 0 1rem;
+      color: #0b5934;
+      font-size: 1rem;
+      text-align: center;
+      letter-spacing: 0.08em;
+    }
+
+    .itc3-controller-features ul {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem 1.5rem;
+      margin: 0;
+      padding-left: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .itc3-controller-features li::marker {
+      color: #0b5934;
+    }
+
+    .solutions-page > .footer-bar {
+      position: relative;
+      inset: auto;
+      flex-shrink: 0;
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .solutions-page > .footer-bar .left {
+      background: #0b5934;
+    }
+
+    .solutions-page > .footer-bar .right {
+      background: var(--yellow);
+      color: #333;
+    }
+
+    .projects-page {
+      display: flex;
+      flex-direction: column;
+      min-height: calc(100vh - 52px);
+      padding: 52px 0 3rem;
+      background: #f8f8f5;
+    }
+
+    .projects-banner {
+      padding: 1rem 1.5rem 1.15rem;
+      background: #0b5934;
+      color: #fff;
+    }
+
+    .projects-banner h2,
+    .projects-banner p {
+      width: calc(100% - 48px);
+      max-width: 1200px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .projects-banner h2 {
+      margin-top: 0;
+      margin-bottom: 0.35rem;
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+    }
+
+    .projects-banner p {
+      margin-top: 0;
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 0.92rem;
+    }
+
+    .projects-flow {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0;
+      width: calc(100% - 48px);
+      max-width: 1200px;
+      margin: 24px auto 0;
+    }
+
+    .project-category {
+      min-width: 0;
+      padding: 24px;
+      border-top: 1px solid #cbd5e1;
+      background: #fff;
+      scroll-margin-top: 72px;
+    }
+
+    .project-category:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    .project-category-heading {
+      margin-bottom: 1.25rem;
+    }
+
+    .project-category-heading span {
+      color: #0b5934;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .project-category-heading h3 {
+      margin: 0.25rem 0 0.5rem;
+      color: #0b5934;
+      font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+    }
+
+    .project-category-heading p,
+    .project-details p {
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    .project-category-heading p {
+      max-width: 75ch;
+      margin: 0;
+    }
+
+    .project-block {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      padding: 24px 0;
+      border-top: 1px solid #cbd5e1;
+    }
+
+    .project-block:first-of-type {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .project-block > h4 {
+      order: 1;
+      margin: 0 0 1rem;
+      color: #0b5934;
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      line-height: 1.25;
+    }
+
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      order: 2;
+    }
+
+    .project-gallery figure {
+      aspect-ratio: 16 / 9;
+      margin: 0;
+      overflow: hidden;
+      background: #f1f5f9;
+    }
+
+    .project-gallery img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .project-details {
+      order: 3;
+      padding: 1.25rem 0 0.25rem;
+    }
+
+    .project-details p {
+      margin: 0;
+      font-size: 0.98rem;
+    }
+
+    .project-details p + p {
+      margin-top: 0.85rem;
+    }
+
+    .project-block > .project-table-wrap {
+      order: 4;
+      margin-top: 1rem;
+    }
+
+    .project-block .project-table td:first-child {
+      width: 27%;
+    }
+
+    .project-table caption {
+      padding: 0 0 0.5rem;
+      color: #0b5934;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    .projects-page > .footer-bar {
+      position: relative;
+      inset: auto;
+      flex-shrink: 0;
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .projects-page > .footer-bar .left {
+      background: #0b5934;
+    }
+
+    .projects-page > .footer-bar .right {
+      background: var(--yellow);
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .solutions-flow {
+        width: calc(100% - 32px);
+        margin-top: 16px;
+      }
+
+      .solution-detail-grid {
+        grid-template-columns: 1fr;
+        padding: 16px;
+      }
+
+      .itc3-controller {
+        margin: 0 16px 16px;
+        padding: 16px;
+      }
+
+      .itc3-controller-main,
+      .itc3-controller-features ul {
+        grid-template-columns: 1fr;
+      }
+
+      .itc3-controller-summary {
+        padding: 16px;
+      }
+
+      .projects-flow {
+        width: calc(100% - 32px);
+        margin-top: 16px;
+      }
+
+      .projects-banner {
+        padding: 0.85rem 1rem 1rem;
+      }
+
+      .projects-banner h2,
+      .projects-banner p {
+        width: 100%;
+      }
+
+      .project-category {
+        padding: 16px;
+      }
+
+      .project-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .solutions-banner {
+        padding: 0.85rem 1rem;
+      }
     }
 
     .project-table-wrap {
@@ -787,9 +1247,12 @@
     }
 
     .project-table th {
+      position: sticky;
+      top: 0;
       background: #00a859;
       color: #fff;
       font-weight: 700;
+      z-index: 1;
     }
 
     .project-table tbody tr:nth-child(even) {
@@ -798,8 +1261,7 @@
 
     .project-table td:first-child {
       font-weight: 700;
-      text-align: center;
-      width: 50px;
+      color: #0b5934;
     }
 
     .why-arrow {
@@ -958,114 +1420,6 @@
       }
     }
 
-    /* ===== Unified notable projects ===== */
-    .notable-projects {
-      display: flex;
-      flex-direction: column;
-      min-height: calc(100vh - 52px);
-      padding: 52px 0 3rem;
-      background: var(--cream);
-    }
-
-    .notable-projects-header {
-      flex: 0 0 auto;
-      width: 100%;
-      padding: 1rem 1.5rem;
-      background: #0b5934;
-    }
-
-    .notable-projects-header h2 {
-      max-width: 1200px;
-      margin: 0 auto;
-      color: #fff;
-      font-size: clamp(1.35rem, 2.4vw, 1.8rem);
-      font-weight: 700;
-    }
-
-    .notable-project-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-      width: calc(100% - 48px);
-      max-width: 1200px;
-      margin: 24px auto;
-      align-items: stretch;
-    }
-
-    .notable-project-card {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      min-width: 0;
-      overflow: hidden;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .notable-project-image {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      background: #f1f5f9;
-    }
-
-    .notable-project-image img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .notable-project-body {
-      display: flex;
-      flex: 1;
-      flex-direction: column;
-      padding: 24px;
-    }
-
-    .notable-project-body h3 {
-      margin: 0 0 0.6rem;
-      color: #0b5934;
-      font-size: 1.1rem;
-      line-height: 1.3;
-    }
-
-    .notable-project-body p {
-      margin: 0;
-      color: #475569;
-      font-size: 0.9rem;
-      line-height: 1.55;
-    }
-
-    .notable-projects > .footer-bar {
-      position: relative;
-      inset: auto;
-      flex-shrink: 0;
-      width: 100%;
-      margin-top: auto;
-    }
-
-    .notable-projects > .footer-bar .left {
-      background: #0b5934;
-    }
-
-    .notable-projects > .footer-bar .right {
-      background: var(--yellow);
-      color: #333;
-    }
-
-    @media (max-width: 768px) {
-      .notable-project-grid {
-        grid-template-columns: 1fr;
-        width: min(100% - 32px, 560px);
-        margin: 16px auto;
-      }
-
-      .notable-projects-header {
-        padding: 0.85rem 1rem;
-      }
-    }
     /* ===== How it Works ===== */
     #how {
       background: white;
@@ -1837,1018 +2191,6 @@
       color: #fff;
       font-size: 0.57rem;
       line-height: 1.25;
-    }
-
-    /* ===== Signal Heads / Poles / Controller ===== */
-    #signal-heads,
-    #signal-poles,
-    #signal-controller,
-    #pcs,
-    #battery {
-      background: var(--cream);
-    }
-
-    .spec-section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    .spec-intro {
-      font-size: 0.9rem;
-      color: #333;
-      margin-bottom: 1.5rem;
-    }
-
-    .spec-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-
-    .spec-card {
-      background: white;
-      border-radius: 10px;
-      padding: 1.2rem;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-    }
-
-    .spec-card h3 {
-      color: var(--dark-green);
-      margin-bottom: 0.8rem;
-      font-size: 1.1rem;
-      text-align: center;
-    }
-
-    .spec-card .img-row {
-      display: flex;
-      gap: 0.5rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 0.8rem;
-    }
-
-    .spec-card .img-row img {
-      height: 90px;
-      object-fit: contain;
-      background: #f8f8f8;
-      border-radius: 4px;
-      padding: 4px;
-    }
-
-    .spec-card h4 {
-      font-size: 0.85rem;
-      color: var(--dark-green);
-      margin: 0.5rem 0 0.3rem;
-    }
-
-    .spec-card ul {
-      font-size: 0.78rem;
-      color: #444;
-      padding-left: 1.1rem;
-    }
-
-    .spec-card ul li {
-      margin-bottom: 0.2rem;
-    }
-
-    /* Signal Poles catalog layout */
-    #signal-poles {
-      display: flex;
-      flex-direction: column;
-      min-height: calc(100vh - 52px);
-      padding: 52px 0 0;
-      overflow: visible;
-      background: #fcfbe3;
-    }
-
-    .poles-banner {
-      display: grid;
-      grid-template-columns: 1fr minmax(260px, 35%);
-      min-height: 92px;
-      background: #0d5c3a;
-    }
-
-    .poles-banner h2 {
-      align-self: center;
-      margin: 0;
-      padding: 0.8rem 2rem;
-      color: #fff;
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      font-weight: 700;
-    }
-
-    .poles-banner-logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.4rem 1rem;
-      overflow: hidden;
-      background: #fff;
-    }
-
-    .poles-banner-logo img {
-      display: block;
-      width: min(100%, 390px);
-      height: 72px;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .poles-intro {
-      margin: 0;
-      padding: 1rem 2rem;
-      color: #262626;
-      font-size: 0.84rem;
-      line-height: 1.55;
-    }
-
-    .poles-showcase {
-      display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
-      gap: 1rem;
-      flex: 1;
-      min-height: 0;
-      padding: 0.25rem 1.5rem 1rem;
-    }
-
-    .standard-poles,
-    .overhead-poles {
-      min-width: 0;
-      padding: 0.8rem;
-      border: 1px solid rgba(13, 92, 58, 0.17);
-      background: rgba(255, 255, 255, 0.5);
-    }
-
-    .standard-poles > h3,
-    .overhead-poles > h3 {
-      margin: 0 0 0.7rem;
-      color: #000;
-      text-align: center;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-    }
-
-    .standard-assets {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.75rem;
-    }
-
-    .pole-asset {
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      margin: 0;
-    }
-
-    .pole-asset figcaption {
-      margin-bottom: 0.45rem;
-      color: #000;
-      text-align: center;
-      font-size: 0.85rem;
-      font-weight: 700;
-    }
-
-    .pole-photo,
-    .foundation-schematic {
-      flex: 1;
-      min-height: 270px;
-      overflow: hidden;
-      border: 3px solid #fff;
-      background: #e9f0e8;
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.11);
-    }
-
-    .pole-photo svg,
-    .foundation-schematic svg {
-      display: block;
-      width: 100%;
-      height: 100%;
-      min-height: 270px;
-      object-fit: cover;
-    }
-
-    .overhead-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-      gap: 0.8rem;
-      min-height: 0;
-      height: calc(100% - 2rem);
-    }
-
-    .overhead-schematics {
-      display: grid;
-      grid-template-rows: minmax(0, 1.2fr) minmax(0, 0.8fr);
-      gap: 0.7rem;
-      min-height: 0;
-    }
-
-    .overhead-diagram,
-    .overhead-photo {
-      min-height: 120px;
-      overflow: hidden;
-      border: 3px solid #fff;
-      background: #fffdf2;
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.11);
-    }
-
-    .overhead-diagram svg,
-    .overhead-photo svg {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .overhead-photo {
-      min-height: 280px;
-      background: #9bc7d7;
-    }
-
-    .overhead-photo svg {
-      object-fit: cover;
-    }
-
-    #signal-poles .footer-bar {
-      position: relative;
-      right: auto;
-      bottom: auto;
-      left: auto;
-      flex-shrink: 0;
-      height: 48px;
-      margin-top: auto;
-    }
-
-    #signal-poles .footer-bar .left {
-      background: #0d5c3a;
-      color: #fff;
-    }
-
-    #signal-poles .footer-bar .right {
-      background: #00a859;
-      color: #fff;
-      font-size: 0.57rem;
-      line-height: 1.25;
-    }
-
-    /* Signal Heads catalog layout */
-    #signal-heads {
-      display: flex;
-      flex-direction: column;
-      min-height: calc(100vh - 52px);
-      padding: 52px 0 0;
-      overflow: visible;
-      background: #fcfbe3;
-    }
-
-    .signal-banner {
-      display: grid;
-      grid-template-columns: 1fr minmax(240px, 34%);
-      min-height: 92px;
-      background: #0d5c3a;
-    }
-
-    .signal-banner h2 {
-      align-self: center;
-      margin: 0;
-      padding: 0.8rem 2rem;
-      color: #fff;
-      font-family: 'Playfair Display', serif;
-      font-size: 2.25rem;
-      font-weight: 700;
-    }
-
-    .signal-banner-logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.4rem 1rem;
-      background: #fff;
-      overflow: hidden;
-    }
-
-    .signal-banner-logo img {
-      display: block;
-      width: min(100%, 390px);
-      height: 72px;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .signal-intro {
-      margin: 0;
-      padding: 1rem 2rem 1.1rem;
-      color: #222;
-      font-size: 0.86rem;
-      line-height: 1.55;
-    }
-
-    .signal-catalog {
-      display: grid;
-      grid-template-columns: 1.05fr 1.05fr 0.8fr;
-      gap: 0;
-      flex: 1;
-      padding: 0 1.4rem 1rem;
-    }
-
-    .signal-column {
-      min-width: 0;
-      padding: 0.8rem 1.15rem;
-      border-right: 1px solid rgba(13, 92, 58, 0.3);
-    }
-
-    .signal-column:last-child {
-      border-right: 0;
-    }
-
-    .signal-column h3 {
-      margin: 0 0 0.65rem;
-      color: #000;
-      text-align: center;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-    }
-
-    .signal-art {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 0.8rem;
-      width: 100%;
-    }
-
-    .futura-art {
-      min-height: 176px;
-      gap: 0.25rem;
-    }
-
-    .futura-art svg:first-child {
-      width: 47%;
-      max-height: 176px;
-    }
-
-    .futura-art svg:last-child {
-      width: 53%;
-      max-height: 176px;
-    }
-
-    .ryg-art {
-      flex-direction: column;
-      min-height: 176px;
-      gap: 0;
-    }
-
-    .ryg-art > svg {
-      width: 100%;
-      max-height: 116px;
-    }
-
-    .ryg-variants {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      gap: 1rem;
-    }
-
-    .ryg-variants svg {
-      width: 34%;
-      max-height: 70px;
-    }
-
-    .signal-copy {
-      color: #222;
-      font-size: 0.73rem;
-      line-height: 1.4;
-    }
-
-    .signal-copy h4 {
-      margin: 0.55rem 0 0.2rem;
-      color: #0d5c3a;
-      font-size: 0.78rem;
-      font-weight: 700;
-    }
-
-    .signal-copy p {
-      margin: 0 0 0.3rem;
-    }
-
-    .signal-copy ul {
-      margin: 0 0 0.5rem;
-      padding-left: 1rem;
-    }
-
-    .signal-copy li {
-      margin-bottom: 0.12rem;
-    }
-
-    .counter-art {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 145px;
-      margin: 0.3rem auto 1.2rem;
-      max-width: 220px;
-      background: linear-gradient(145deg, #180b0b, #300c0d);
-      border: 7px solid #272522;
-      border-radius: 8px;
-      box-shadow: inset 0 0 0 2px #5a5550, 0 5px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .counter-digits,
-    .counter-variant span {
-      color: #ff1e20;
-      font-family: 'Open Sans', sans-serif;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-shadow: 0 0 8px rgba(255, 18, 25, 0.75);
-    }
-
-    .counter-digits {
-      font-size: 5.25rem;
-      line-height: 1;
-    }
-
-    .counter-variants {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      justify-items: center;
-      gap: 0.8rem;
-      max-width: 250px;
-      margin: 0 auto;
-    }
-
-    .counter-variant {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #171413;
-      border: 5px solid #34312d;
-      box-shadow: inset 0 0 0 2px #070707;
-    }
-
-    .counter-round {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-    }
-
-    .counter-wide {
-      grid-column: 1 / -1;
-      width: 150px;
-      height: 62px;
-      border-radius: 7px;
-    }
-
-    .counter-variant span {
-      font-size: 2.2rem;
-    }
-
-    .counter-wide span {
-      font-size: 2rem;
-    }
-
-    #signal-heads .footer-bar {
-      position: relative;
-      bottom: auto;
-      left: auto;
-      right: auto;
-      flex-shrink: 0;
-      height: 48px;
-      margin-top: auto;
-    }
-
-    #signal-heads .footer-bar .left {
-      background: #0d5c3a;
-      color: #fff;
-    }
-
-    #signal-heads .footer-bar .right {
-      background: #00a859;
-      color: #fff;
-      font-size: 0.57rem;
-      line-height: 1.25;
-    }
-
-    /* ===== Smart Traffic ===== */
-    #smart-traffic {
-      background: linear-gradient(135deg, #0a2a1a, #1a4d2e);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 60vh;
-    }
-
-    .smart-banner {
-      background: var(--green);
-      color: white;
-      padding: 2rem 3.5rem;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
-    }
-
-    .smart-banner h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .smart-banner p {
-      font-size: 1.5rem;
-      opacity: 0.95;
-    }
-
-    @media (max-width: 768px) {
-      #smart-traffic {
-        flex-direction: column;
-        align-items: stretch;
-        justify-content: center;
-      }
-
-      #smart-traffic .smart-banner {
-        align-self: center;
-        width: fit-content;
-        max-width: calc(100% - 2rem);
-        padding: 1.5rem clamp(1rem, 5vw, 2rem);
-      }
-
-      #smart-traffic .smart-banner h2 {
-        font-size: clamp(1.6rem, 8vw, 2.4rem);
-        overflow-wrap: anywhere;
-      }
-
-      #smart-traffic .smart-banner p {
-        font-size: clamp(0.95rem, 4vw, 1.5rem);
-        overflow-wrap: anywhere;
-      }
-    }
-
-    /* ===== Smart Signals Tree ===== */
-    #smart-signals {
-      display: flex;
-      flex-direction: column;
-      min-height: calc(100vh - 52px);
-      padding: 52px 0 0;
-      overflow: visible;
-      background: var(--cream);
-    }
-
-    .tree-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
-      align-items: center;
-      gap: 1.5rem;
-      width: 100%;
-      flex: 1;
-      margin: 0;
-      padding: 1.5rem;
-    }
-
-    .tree-diagram {
-      display: grid;
-      grid-template-columns: minmax(150px, 0.8fr) minmax(0, 1.5fr);
-      align-items: center;
-      min-width: 0;
-      min-height: 440px;
-      --flow-green: #3cb346;
-    }
-
-    .tree-root {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-height: 116px;
-      padding: 1.2rem 0.8rem;
-      background: var(--flow-green);
-      color: #fff;
-      text-align: center;
-      font-size: 1.28rem;
-      font-weight: 700;
-    }
-
-    .tree-root::after {
-      position: absolute;
-      top: 50%;
-      left: 100%;
-      width: 12px;
-      height: 4px;
-      background: var(--flow-green);
-      content: "";
-    }
-
-    .tree-root span {
-      display: block;
-      font-size: 0.8rem;
-      font-weight: 400;
-      margin-top: 0.35rem;
-      opacity: 0.9;
-    }
-
-    .tree-branches {
-      position: relative;
-      display: grid;
-      grid-template-rows: repeat(4, minmax(72px, 1fr));
-      align-self: stretch;
-      min-width: 0;
-      padding: 0.35rem 0 0.35rem 2rem;
-    }
-
-    .tree-branches::before {
-      position: absolute;
-      top: 12.5%;
-      bottom: 12.5%;
-      left: 0;
-      width: 4px;
-      background: var(--flow-green);
-      content: "";
-    }
-
-    .tree-branch {
-      position: relative;
-      display: flex;
-      align-items: center;
-      min-width: 0;
-    }
-
-    .tree-branch::before {
-      position: absolute;
-      right: 100%;
-      width: 2rem;
-      height: 4px;
-      background: var(--flow-green);
-      content: "";
-    }
-
-    .tree-branch::after {
-      position: absolute;
-      right: 100%;
-      margin-right: -2rem;
-      border-top: 6px solid transparent;
-      border-bottom: 6px solid transparent;
-      border-left: 9px solid var(--flow-green);
-      content: "";
-    }
-
-    .tree-branch .box {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      min-height: 66px;
-      padding: 0.7rem 0.6rem;
-      background: var(--flow-green);
-      color: #fff;
-      font-weight: 700;
-      font-size: 0.85rem;
-      text-align: center;
-    }
-
-    .tree-keys {
-      min-width: 0;
-      align-self: center;
-      background: #fff;
-      color: #000;
-      border: 1px solid rgba(13, 92, 58, 0.18);
-    }
-
-    .tree-keys h3 {
-      margin: 0;
-      padding: 0.85rem 1rem;
-      background: #0d5c9a;
-      color: #fff;
-      font-size: 1rem;
-    }
-
-    .tree-keys ul {
-      margin: 0;
-      padding: 0.85rem 1.2rem 0.85rem 2rem;
-      color: #111;
-      font-size: 0.82rem;
-      line-height: 1.45;
-    }
-
-    .tree-keys li {
-      margin-bottom: 0.8rem;
-    }
-
-    .tree-keys li:last-child {
-      margin-bottom: 0;
-    }
-
-    #smart-signals .footer-bar {
-      position: static;
-      min-height: 66px;
-      height: auto;
-      flex-shrink: 0;
-    }
-
-    #smart-signals .footer-bar .left {
-      flex: 0.8;
-      background: #0d5c3a;
-      color: #fff;
-    }
-
-    #smart-signals .footer-bar .right {
-      flex: 1.8;
-      padding: 0.55rem 1rem;
-      background: #00a859;
-      color: #fff;
-      font-size: 0.58rem;
-    }
-
-    @media (max-width: 900px) {
-      .tree-layout {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-
-      .tree-diagram {
-        min-height: 360px;
-      }
-
-      .tree-keys {
-        width: 100%;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .tree-layout {
-        padding: 1rem 0.75rem;
-      }
-
-      .tree-diagram {
-        grid-template-columns: minmax(115px, 0.72fr) minmax(0, 1.28fr);
-        min-height: 330px;
-      }
-
-      .tree-root {
-        min-height: 96px;
-        padding: 0.8rem 0.5rem;
-        font-size: 1rem;
-      }
-
-      .tree-root::after {
-        width: 12px;
-      }
-
-      .tree-branches {
-        grid-template-rows: repeat(4, minmax(65px, 1fr));
-        padding-left: 1.35rem;
-      }
-
-      .tree-branches::before {
-        left: 0;
-      }
-
-      .tree-branch::before {
-        width: 1.35rem;
-      }
-
-      .tree-branch::after {
-        margin-right: -1.35rem;
-      }
-
-      .tree-branch .box {
-        min-height: 56px;
-        padding: 0.55rem 0.3rem;
-        font-size: 0.68rem;
-      }
-
-      .tree-keys h3 {
-        padding: 0.7rem 0.8rem;
-        font-size: 0.92rem;
-      }
-
-      .tree-keys ul {
-        padding: 0.8rem 0.9rem 0.8rem 1.8rem;
-        font-size: 0.78rem;
-      }
-
-      #smart-signals .footer-bar {
-        flex-direction: column;
-      }
-
-      #smart-signals .footer-bar .left,
-      #smart-signals .footer-bar .right {
-        min-height: 40px;
-        padding: 0.45rem 0.8rem;
-      }
-    }
-
-    /* ===== Smart Plan / Intersection / Corridor ===== */
-    #smart-features {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      min-height: calc(100vh - 52px);
-      padding: 52px 0 0;
-      overflow: hidden;
-      background: #fcfbe3;
-    }
-
-    #smart-features::before,
-    #smart-features::after {
-      position: absolute;
-      top: 52px;
-      right: 0;
-      z-index: 0;
-      width: 150px;
-      height: 150px;
-      pointer-events: none;
-      content: "";
-    }
-
-    #smart-features::before {
-      background: #00a859;
-      clip-path: polygon(100% 0, 100% 100%, 0 0);
-    }
-
-    #smart-features::after {
-      background: #e7b52e;
-      clip-path: polygon(100% 0, 100% 16%, 18% 0);
-    }
-
-    .features-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      width: 100%;
-      flex: 1;
-      align-items: stretch;
-      margin: 0 auto;
-      padding: 2rem 1.5rem 1rem;
-    }
-
-    .feature-card {
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      padding: 0.85rem;
-      border: 1px solid rgba(13, 92, 58, 0.17);
-      background: #fcfbe3;
-    }
-
-    .feature-card .head {
-      background: #00a859;
-      color: #fff;
-      padding: 0.8rem;
-      text-align: center;
-      font-weight: 700;
-      font-size: 1.05rem;
-    }
-
-    .feature-card .body {
-      display: flex;
-      flex: 1;
-      flex-direction: column;
-      padding: 1rem;
-    }
-
-    .feature-card ul {
-      color: #000;
-      font-size: 0.8rem;
-      padding-left: 1.1rem;
-      margin: 0 0 0.75rem;
-    }
-
-    .feature-card .screen {
-      position: relative;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      width: 100%;
-      aspect-ratio: 1.58;
-      max-height: 230px;
-      margin: 0.15rem 0 2rem;
-      padding: 7px 7px 13px;
-      border: 2px solid #343b37;
-      border-radius: 7px;
-      background: #252c29;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.17);
-    }
-
-    .feature-card .screen::before {
-      position: absolute;
-      top: 100%;
-      left: 43%;
-      width: 14%;
-      height: 14px;
-      background: linear-gradient(90deg, #87918a, #d5d9d4, #7c8780);
-      content: "";
-    }
-
-    .feature-card .screen::after {
-      position: absolute;
-      top: calc(100% + 13px);
-      left: 33%;
-      width: 34%;
-      height: 5px;
-      border-radius: 50% 50% 3px 3px;
-      background: #909a93;
-      content: "";
-    }
-
-    .feature-card .screen svg {
-      display: block;
-      width: 100%;
-      height: 100%;
-      border: 1px solid #101613;
-      background: #edf2f0;
-    }
-
-    .feature-card .bottom {
-      margin-top: auto;
-      font-size: 0.78rem;
-      color: #000;
-    }
-
-    .feature-card .bottom ul {
-      margin-bottom: 0;
-    }
-
-    #smart-features .footer-bar {
-      position: static;
-      min-height: 66px;
-      height: auto;
-      flex-shrink: 0;
-      z-index: 1;
-    }
-
-    #smart-features .footer-bar .left {
-      flex: 0.8;
-      background: #0d5c3a;
-      color: #fff;
-    }
-
-    #smart-features .footer-bar .right {
-      flex: 1.8;
-      padding: 0.55rem 1rem;
-      background: #00a859;
-      color: #fff;
-      font-size: 0.58rem;
-    }
-
-    @media (max-width: 900px) {
-      #smart-features::before,
-      #smart-features::after {
-        width: 110px;
-        height: 110px;
-      }
-
-      .features-grid {
-        grid-template-columns: 1fr;
-        max-width: 680px;
-      }
-
-      .feature-card .screen {
-        max-height: none;
-        aspect-ratio: 1.75;
-      }
-    }
-
-    @media (max-width: 600px) {
-      #smart-features::before,
-      #smart-features::after {
-        top: 52px;
-        width: 78px;
-        height: 78px;
-      }
-
-      .features-grid {
-        gap: 0.8rem;
-        padding: 1.25rem 0.75rem 0.8rem;
-      }
-
-      .feature-card {
-        padding: 0.65rem;
-      }
-
-      .feature-card .body {
-        padding: 0.75rem;
-      }
-
-      .feature-card .screen {
-        aspect-ratio: 1.45;
-      }
-
-      #smart-features .footer-bar {
-        flex-direction: column;
-      }
-
-      #smart-features .footer-bar .left,
-      #smart-features .footer-bar .right {
-        min-height: 40px;
-        padding: 0.45rem 0.8rem;
-      }
     }
 
     /* ===== Council Benefits ===== */

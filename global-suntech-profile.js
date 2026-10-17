@@ -1,4 +1,4 @@
-﻿
+
     // Mobile menu toggle
     const menuBtn = document.getElementById('menuBtn');
     const navLinks = document.getElementById('navLinks');
@@ -94,4 +94,3 @@
         if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
-  
