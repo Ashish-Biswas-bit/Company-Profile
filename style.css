@@ -958,475 +958,114 @@
       }
     }
 
-    /* ===== Projects ===== */
-    #projects-consulting,
-    #projects-traffic,
-    #projects-pv {
+    /* ===== Unified notable projects ===== */
+    .notable-projects {
+      display: flex;
+      flex-direction: column;
+      min-height: calc(100vh - 52px);
+      padding: 52px 0 3rem;
       background: var(--cream);
     }
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    .project-card {
-      background: white;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .project-card .img-wrap {
-      height: 160px;
-      overflow: hidden;
-    }
-
-    .project-card .img-wrap img {
+    .notable-projects-header {
+      flex: 0 0 auto;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      padding: 1rem 1.5rem;
+      background: #0b5934;
     }
 
-    .project-card .body {
-      padding: 1rem 1.2rem;
-    }
-
-    .project-card h3 {
-      color: var(--dark-green);
-      margin-bottom: 0.5rem;
-      font-size: 1.05rem;
-    }
-
-    .project-card p {
-      font-size: 0.8rem;
-      color: #444;
-    }
-
-    .project-full {
-      max-width: 1100px;
+    .notable-projects-header h2 {
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    .project-full .text-block {
-      background: white;
-      padding: 1.2rem 1.5rem;
-      border-radius: 8px;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    }
-
-    .project-full .text-block h3 {
-      color: var(--dark-green);
-      margin-bottom: 0.5rem;
-    }
-
-    .project-full .imgs {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
-
-    .project-full .imgs img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-
-    /* Consulting projects catalog layout */
-    #projects-consulting {
-      display: flex;
-      flex-direction: column;
-      min-height: calc(100vh - 52px);
-      padding: 52px 0 0;
-      overflow: visible;
-      background: #fcfbe3;
-    }
-
-    .consulting-banner {
-      display: flex;
-      align-items: center;
-      min-height: 82px;
-      padding: 0 1.5rem;
-      background: #0d5c3a;
-    }
-
-    .consulting-banner h2 {
-      width: fit-content;
-      margin: 0;
-      padding: 0.7rem 1.5rem 0.7rem 0.5rem;
-      border-radius: 0 12px 12px 0;
       color: #fff;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 1.8rem;
+      font-size: clamp(1.35rem, 2.4vw, 1.8rem);
       font-weight: 700;
     }
 
-    #projects-consulting .projects-grid {
+    .notable-project-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      grid-template-rows: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
-      width: 100%;
-      max-width: none;
-      flex: 1;
-      margin: 0;
-      padding: 1rem 1.4rem;
-    }
-
-    #projects-consulting .project-card {
-      display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 24px;
+      width: calc(100% - 48px);
+      max-width: 1200px;
+      margin: 24px auto;
       align-items: stretch;
+    }
+
+    .notable-project-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
       min-width: 0;
-      border: 1px solid rgba(13, 92, 58, 0.15);
-      border-radius: 0;
-      background: rgba(255, 255, 255, 0.78);
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.09);
-    }
-
-    #projects-consulting .project-card .img-wrap {
-      height: 100%;
-      min-height: 190px;
-    }
-
-    #projects-consulting .project-card .img-wrap img {
-      display: block;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    #projects-consulting .project-card .body {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 1rem 1.1rem;
-    }
-
-    #projects-consulting .project-card h3 {
-      margin-bottom: 0.55rem;
-      color: #000;
-      font-size: 1rem;
-      font-weight: 700;
-      line-height: 1.3;
-    }
-
-    #projects-consulting .project-card p {
-      color: #292929;
-      font-size: 0.78rem;
-      line-height: 1.5;
-    }
-
-    #projects-consulting .footer-bar {
-      position: relative;
-      right: auto;
-      bottom: auto;
-      left: auto;
-      flex-shrink: 0;
-      height: 48px;
-      margin-top: auto;
-    }
-
-    #projects-consulting .footer-bar .left {
-      background: #0d5c3a;
-      color: #fff;
-    }
-
-    #projects-consulting .footer-bar .right {
-      background: #00a859;
-      color: #fff;
-      font-size: 0.57rem;
-      line-height: 1.25;
-    }
-
-    /* Traffic Signals projects catalog layout */
-    #projects-traffic {
-      display: flex;
-      flex-direction: column;
-      min-height: calc(100vh - 52px);
-      padding: 52px 0 0;
-      overflow: visible;
-      background: #fcfbe3;
-    }
-
-    .traffic-banner {
-      display: flex;
-      align-items: center;
-      min-height: 82px;
-      padding: 0 1.5rem;
-      background: #0d5c3a;
-    }
-
-    .traffic-banner h2 {
-      width: fit-content;
-      margin: 0;
-      padding: 0.7rem 1.5rem 0.7rem 0.5rem;
-      border-radius: 0 12px 12px 0;
-      color: #fff;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-    }
-
-    .traffic-showcase {
-      display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
-      gap: 1rem;
-      flex: 1;
-      min-height: 0;
-      padding: 0.85rem 1.2rem 1rem;
-    }
-
-    .traffic-scenes {
-      display: grid;
-      grid-template-rows: repeat(2, minmax(0, 1fr));
-      gap: 0.85rem;
-      min-height: 0;
-    }
-
-    .traffic-scene {
-      min-height: 165px;
       overflow: hidden;
-      border: 4px solid #fff;
-      background: #263238;
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.13);
-    }
-
-    .traffic-scene svg {
-      display: block;
-      width: 100%;
-      height: 100%;
-      min-height: 165px;
-      object-fit: cover;
-    }
-
-    .traffic-right-area {
-      display: grid;
-      grid-template-rows: minmax(0, 0.9fr) minmax(0, 1.1fr);
-      gap: 0.85rem;
-      min-width: 0;
-      min-height: 0;
-    }
-
-    .traffic-project {
-      display: grid;
-      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-      gap: 0.85rem;
-      min-width: 0;
-      padding: 0.8rem;
-      border: 1px solid rgba(13, 92, 58, 0.18);
-      background: rgba(255, 255, 255, 0.72);
-    }
-
-    .traffic-project-copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 0.4rem;
-    }
-
-    .traffic-project h3,
-    .intelligent-project h3 {
-      margin: 0 0 0.5rem;
-      color: #000;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      line-height: 1.3;
-    }
-
-    .traffic-project p,
-    .intelligent-project p {
-      margin: 0;
-      color: #292929;
-      font-size: 0.78rem;
-      line-height: 1.5;
-    }
-
-    .bus-scene {
-      min-height: 150px;
-      overflow: hidden;
-      border: 3px solid #fff;
-      background: #8cc7e2;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
-    }
-
-    .bus-scene svg {
-      display: block;
-      width: 100%;
-      height: 100%;
-      min-height: 150px;
-      object-fit: cover;
-    }
-
-    .traffic-lower {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(190px, 0.8fr);
-      gap: 0.85rem;
-      min-height: 0;
-    }
-
-    .intelligent-project {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-width: 0;
-      padding: 0.85rem;
-      border: 1px solid rgba(13, 92, 58, 0.18);
-      background: rgba(255, 255, 255, 0.72);
-    }
-
-    .smart-infographic {
-      flex: 1;
-      min-height: 135px;
-      margin-bottom: 0.55rem;
-      overflow: hidden;
-      border: 3px solid #fff;
-      background: #d5e8dc;
-    }
-
-    .smart-infographic svg {
-      display: block;
-      width: 100%;
-      height: 100%;
-      min-height: 135px;
-      object-fit: cover;
-    }
-
-    .app-mockup {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 230px;
-      overflow: hidden;
-      border: 4px solid #fff;
-      background: #17252b;
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .app-road {
-      position: absolute;
-      inset: 0;
-    }
-
-    .app-road svg {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.78;
-    }
-
-    .phone-frame {
-      position: relative;
-      z-index: 1;
-      width: min(56%, 158px);
-      min-width: 126px;
-      padding: 7px;
-      border: 3px solid #bac0bf;
-      border-radius: 20px;
-      background: #15191a;
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.48);
-    }
-
-    .phone-speaker {
-      width: 30px;
-      height: 3px;
-      margin: 0 auto 5px;
-      border-radius: 2px;
-      background: #636b69;
-    }
-
-    .phone-screen {
-      display: flex;
-      flex-direction: column;
-      gap: 0.34rem;
-      min-height: 190px;
-      padding: 0.65rem 0.5rem;
-      border-radius: 12px;
-      background: linear-gradient(160deg, #f8fbf6, #e1ece3);
-      color: #1b362b;
-      font-family: 'Open Sans', sans-serif;
-    }
-
-    .phone-brand {
-      color: #0d5c3a;
-      text-align: center;
-      font-size: 0.58rem;
-      font-weight: 700;
-    }
-
-    .phone-mark {
-      margin-bottom: 0.25rem;
-      color: #60746a;
-      text-align: center;
-      font-size: 0.49rem;
-    }
-
-    .phone-prompt {
-      margin: 0.2rem 0;
-      color: #1e342b;
-      font-size: 0.58rem;
-      font-weight: 700;
-    }
-
-    .role-option {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 25px;
-      padding: 0.25rem 0.38rem;
-      border: 1px solid #c9d8cd;
-      border-radius: 4px;
       background: #fff;
-      color: #263c31;
-      font-size: 0.53rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
 
-    .role-option b {
-      color: #00a859;
+    .notable-project-image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #f1f5f9;
+    }
+
+    .notable-project-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .notable-project-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 24px;
+    }
+
+    .notable-project-body h3 {
+      margin: 0 0 0.6rem;
+      color: #0b5934;
+      font-size: 1.1rem;
+      line-height: 1.3;
+    }
+
+    .notable-project-body p {
+      margin: 0;
+      color: #475569;
       font-size: 0.9rem;
+      line-height: 1.55;
     }
 
-    .phone-home {
-      width: 28px;
-      height: 3px;
-      margin: auto auto 0;
-      border-radius: 2px;
-      background: #718078;
-    }
-
-    #projects-traffic .footer-bar {
+    .notable-projects > .footer-bar {
       position: relative;
-      right: auto;
-      bottom: auto;
-      left: auto;
+      inset: auto;
       flex-shrink: 0;
-      height: 48px;
+      width: 100%;
       margin-top: auto;
     }
 
-    #projects-traffic .footer-bar .left {
-      background: #0d5c3a;
-      color: #fff;
+    .notable-projects > .footer-bar .left {
+      background: #0b5934;
     }
 
-    #projects-traffic .footer-bar .right {
-      background: #00a859;
-      color: #fff;
-      font-size: 0.57rem;
-      line-height: 1.25;
+    .notable-projects > .footer-bar .right {
+      background: var(--yellow);
+      color: #333;
     }
 
+    @media (max-width: 768px) {
+      .notable-project-grid {
+        grid-template-columns: 1fr;
+        width: min(100% - 32px, 560px);
+        margin: 16px auto;
+      }
+
+      .notable-projects-header {
+        padding: 0.85rem 1rem;
+      }
+    }
     /* ===== How it Works ===== */
     #how {
       background: white;
@@ -3766,7 +3405,6 @@
       .offer-cards,
       .offer-images,
       .why-grid,
-      .projects-grid,
       .how-layout,
       .ops-layout,
       .products-grid,
@@ -3831,37 +3469,6 @@
     }
 
     @media (max-width: 760px) {
-      .consulting-banner {
-        min-height: 76px;
-        padding: 0 1rem;
-      }
-
-      .consulting-banner h2 {
-        padding: 0.7rem 1rem 0.7rem 0;
-        font-size: 1.55rem;
-      }
-
-      #projects-consulting .projects-grid {
-        gap: 0.7rem;
-        padding: 0.8rem;
-      }
-
-      #projects-consulting .project-card {
-        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-      }
-
-      #projects-consulting .project-card .body {
-        padding: 0.7rem;
-      }
-
-      #projects-consulting .project-card h3 {
-        font-size: 0.88rem;
-      }
-
-      #projects-consulting .project-card p {
-        font-size: 0.7rem;
-      }
-
       .about-banner {
         grid-template-columns: 38% 1fr;
         min-height: 76px;
@@ -3970,44 +3577,6 @@
     }
 
     @media (max-width: 600px) {
-      #projects-consulting .projects-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-      }
-
-      #projects-consulting .project-card {
-        grid-template-columns: 1fr;
-      }
-
-      #projects-consulting .project-card .img-wrap {
-        height: 190px;
-        min-height: 190px;
-      }
-
-      #projects-consulting .project-card .body {
-        padding: 0.85rem 1rem;
-      }
-
-      #projects-consulting .project-card h3 {
-        font-size: 1rem;
-      }
-
-      #projects-consulting .project-card p {
-        font-size: 0.78rem;
-      }
-
-      #projects-consulting .footer-bar {
-        height: auto;
-        min-height: 48px;
-        flex-direction: column;
-      }
-
-      #projects-consulting .footer-bar .left,
-      #projects-consulting .footer-bar .right {
-        min-height: 40px;
-        padding: 0.45rem 0.8rem;
-      }
-
       .about-banner {
         grid-template-columns: 36% 1fr;
         min-height: 68px;
@@ -4143,147 +3712,6 @@
 
       #operations .footer-bar .left,
       #operations .footer-bar .right {
-        min-height: 40px;
-        padding: 0.45rem 0.8rem;
-      }
-    }
-
-    @media (max-width: 900px) {
-      .traffic-showcase {
-        grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
-        padding: 0.75rem;
-      }
-
-      .traffic-project {
-        grid-template-columns: 1fr;
-        overflow: auto;
-      }
-
-      .bus-scene {
-        min-height: 115px;
-      }
-
-      .bus-scene svg {
-        min-height: 115px;
-      }
-
-      .traffic-lower {
-        grid-template-columns: 1fr;
-        grid-template-rows: minmax(0, 1fr) minmax(170px, 0.8fr);
-      }
-
-      .intelligent-project {
-        overflow: auto;
-      }
-
-      .app-mockup {
-        min-height: 180px;
-      }
-    }
-
-    @media (max-width: 760px) {
-      .traffic-banner {
-        min-height: 76px;
-        padding: 0 1rem;
-      }
-
-      .traffic-banner h2 {
-        padding: 0.7rem 0.8rem 0.7rem 0;
-        font-size: 1.5rem;
-      }
-
-      .traffic-showcase {
-        grid-template-columns: 1fr;
-        gap: 0.8rem;
-        padding: 0.75rem;
-      }
-
-      .traffic-scenes {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-rows: 210px;
-      }
-
-      .traffic-scene,
-      .traffic-scene svg {
-        min-height: 0;
-      }
-
-      .traffic-right-area {
-        grid-template-rows: auto auto;
-      }
-
-      .traffic-project {
-        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-      }
-
-      .traffic-lower {
-        grid-template-columns: minmax(0, 1.2fr) minmax(190px, 0.8fr);
-        grid-template-rows: auto;
-      }
-
-      .app-mockup {
-        min-height: 260px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .traffic-banner {
-        min-height: 68px;
-      }
-
-      .traffic-banner h2 {
-        font-size: 1.22rem;
-      }
-
-      .traffic-scenes {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(2, 190px);
-      }
-
-      .traffic-project,
-      .traffic-lower {
-        grid-template-columns: 1fr;
-      }
-
-      .traffic-project {
-        overflow: visible;
-      }
-
-      .traffic-project-copy {
-        padding: 0.5rem;
-      }
-
-      .traffic-project p,
-      .intelligent-project p {
-        font-size: 0.78rem;
-      }
-
-      .bus-scene,
-      .bus-scene svg {
-        min-height: 170px;
-      }
-
-      .traffic-lower {
-        grid-template-rows: auto auto;
-      }
-
-      .smart-infographic,
-      .smart-infographic svg {
-        min-height: 185px;
-      }
-
-      .app-mockup {
-        min-height: 300px;
-      }
-
-      #projects-traffic .footer-bar {
-        height: auto;
-        min-height: 48px;
-        flex-direction: column;
-      }
-
-      #projects-traffic .footer-bar .left,
-      #projects-traffic .footer-bar .right {
         min-height: 40px;
         padding: 0.45rem 0.8rem;
       }
@@ -5532,7 +4960,6 @@
       .features-grid,
       .benefits-children,
       .signal-catalog,
-      #projects-pv .imgs,
       .how-steps {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -5613,25 +5040,15 @@
       .features-grid,
       .benefits-children,
       .signal-catalog,
-      #projects-pv .imgs,
       .how-steps,
       .products-grid,
       .spec-grid,
-      .projects-grid,
       .controller-grid,
       .offer-visuals,
       .product-visuals,
       .signal-tiles,
       .adaptive-layout,
-      .project-card,
-      .traffic-project,
-      .traffic-lower,
-      .traffic-showcase,
       .about-collage {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      #projects-consulting .projects-grid {
         grid-template-columns: minmax(0, 1fr);
       }
 
@@ -5664,7 +5081,7 @@
         min-height: 68px;
       }
 
-      .page :is(.about-grid, .about-collage, .offer-column, .project-card, .feature-card, .benefit-box, .product-category, .pcs-product, .battery-product, .contact-info, .contact-img) {
+      .page :is(.about-grid, .about-collage, .offer-column, .feature-card, .benefit-box, .product-category, .pcs-product, .battery-product, .contact-info, .contact-img) {
         min-width: 0;
         max-width: 100%;
       }
@@ -5712,12 +5129,9 @@
       .features-grid,
       .benefits-children,
       .signal-catalog,
-      #projects-pv .imgs,
-      #projects-consulting .projects-grid,
       .how-steps,
       .products-grid,
       .spec-grid,
-      .projects-grid,
       .controller-grid,
       .offer-visuals,
       .product-visuals,
@@ -5747,89 +5161,3 @@
         transition: none;
       }
     }
-.portfolio-section {
-  max-width: 1140px;
-  margin: 0 auto;
-  background: #f8f8f5;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-}
-.portfolio-header {
-  background: #0d5934;
-  padding: 1rem 1.5rem;
-}
-.portfolio-header h2 {
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0;
-  text-align: left;
-}
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  padding: 2rem;
-  margin: 0 auto;
-  max-width: 1140px;
-}
-.portfolio-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-  overflow: hidden;
-}
-.card-image {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  background-color: #f1f5f9;
-}
-.card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.card-body {
-  padding: 24px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.card-body h3 {
-  color: #0d5934;
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-}
-.card-body p {
-  color: #475569;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  text-align: justify;
-}
-.portfolio-footer {
-  display: flex;
-  width: 100%;
-}
-.footer-left {
-  background: #0d5934;
-  color: #fff;
-  flex: 1;
-  padding: 0.8rem 1.5rem;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-.footer-right {
-  background: #f5c518;
-  flex: 1.4;
-  padding: 0.8rem 1rem;
-  font-size: 0.7rem;
-  line-height: 1.3;
-  color: #333;
-}
