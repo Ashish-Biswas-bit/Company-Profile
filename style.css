@@ -1813,6 +1813,29 @@
       background: #f8fafc;
     }
 
+    .traffic-product-category--featured {
+      border: 2px solid #0b5934;
+      box-shadow: 0 8px 20px rgba(11, 89, 52, 0.12);
+    }
+
+    .traffic-product-category--featured > .traffic-product-heading {
+      margin: -24px -24px 0;
+      padding: 14px 24px 12px;
+      border-bottom: 0;
+      border-radius: 6px 6px 0 0;
+      background: #0b5934;
+    }
+
+    .traffic-product-category--featured > .traffic-product-heading span,
+    .traffic-product-category--featured > .traffic-product-heading h3,
+    .traffic-product-category--featured > .traffic-product-heading p {
+      color: #fff;
+    }
+
+    .traffic-product-category--featured > .traffic-product-heading h3 {
+      margin-bottom: 0.35rem;
+    }
+
     .traffic-product-heading {
       padding-bottom: 8px;
       border-bottom: 2px solid #0b5934;
